@@ -5,19 +5,19 @@
 void DrawButton(HWND parent)
 {
 	HWND b1 = 0;
-	button_setHeight(b1, 50);
-	button_setWidth(b1, 50);
-	button_setX(b1, 10);
-	button_setY(b1, 10);
-	button_setText(b1, L"button1");
+	button_setHeight(b1, 20);
+	button_setWidth(b1, 200);
+	button_setX(b1, 0);
+	button_setY(b1, 0);
+	button_setText(b1, L"This is button1");
 	b1 =  button_create(parent);
 
 	HWND b2 = 0;
-	button_setHeight(b2, 50);
-	button_setWidth(b2, 50);
-	button_setX(b2, 100);
-	button_setY(b2, 100);
-	button_setText(b2, L"button2");
+	button_setHeight(b2, 20);
+	button_setWidth(b2, 200);
+	button_setX(b2, 205);
+	button_setY(b2, 25);
+	button_setText(b2, L"and this is button2");
 	b2 = button_create(parent);
 }
 
