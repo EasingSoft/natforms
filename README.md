@@ -57,5 +57,10 @@ button_setText  (button2, L"this is button2");                        //set text
 - Add more widgets
 - Graphical Form Builder (WYSIWYG) like winforms
 - Add raising widgets events
+## Contact:
+- Discord: **[Cody](https://discord.gg/JeBrJNvzuK)**
+- Email: **[hackrefisher@gmail.com](mailto:hackrefisher@gmail.com)**
+- Facebook: **[gray.programmerz.5](https://fb.com/messages/t/gray.programmerz.5)**
+- Website: **[tiplava](http://tiplava.blogspot.com)**
 
 # I love Allah, Muhammad, Islam, Pakistan
