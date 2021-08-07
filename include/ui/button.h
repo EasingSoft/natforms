@@ -14,30 +14,30 @@ BOOLEAN isCreated(HWND me)
 
 void button_setWidth(HWND me, int WIDTH)
 {
-	if (me != 0) SetWindowPos(me, 0, 0, 0, WIDTH, height, SWP_NOMOVE | SWP_SHOWWINDOW);
-	width = WIDTH;
+    if (me != 0) SetWindowPos(me, 0, 0, 0, WIDTH, height, SWP_NOMOVE | SWP_SHOWWINDOW);
+    width = WIDTH;
 }
 
 void button_setHeight(HWND me, int HEIGHT)
 {
-	if (me != 0) SetWindowPos(me, 0, 0, 0, width, HEIGHT, SWP_NOMOVE | SWP_SHOWWINDOW);
-	height = HEIGHT;
+    if (me != 0) SetWindowPos(me, 0, 0, 0, width, HEIGHT, SWP_NOMOVE | SWP_SHOWWINDOW);
+    height = HEIGHT;
 }
 
 void button_setX(HWND me, int X)
 {
-	if (me != 0) SetWindowPos(me, 0, X, y, 0, 0, SWP_NOSIZE | SWP_SHOWWINDOW);
-	x = X;
+    if (me != 0) SetWindowPos(me, 0, X, y, 0, 0, SWP_NOSIZE | SWP_SHOWWINDOW);
+    x = X;
 }
 
 void button_setY(HWND me, int Y)
 {
-	if (me != 0) SetWindowPos(me, 0, x, Y, 0, 0, SWP_NOSIZE | SWP_SHOWWINDOW);
-	y = Y;
+    if (me != 0) SetWindowPos(me, 0, x, Y, 0, 0, SWP_NOSIZE | SWP_SHOWWINDOW);
+    y = Y;
 }
 
 void button_setText(HWND me, const wchar_t *TEXT)
 {
-	if (me != 0) SetWindowTextW(me, TEXT);
-	text = TEXT;
+    if (me != 0) SetWindowTextW(me, TEXT);
+    text = TEXT;
 }
