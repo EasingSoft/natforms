@@ -16,7 +16,7 @@ void DrawButton(HWND parent)
 	button_setHeight(b2, 30);
 	button_setWidth(b2, 150);
 	button_setX(b2, 10);
-	button_setY(b2, 40);
+	button_setY(b2, 50);
 	button_setText(b2, L"and this is button2");
 	b2 = button_create(parent);
 }
