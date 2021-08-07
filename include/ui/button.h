@@ -4,12 +4,12 @@ int width, height, x, y = 10;
 
 HWND button_create(HWND PARENT)
 {
-	return CreateWindowExW(0, L"button", text, WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, x, y, width, height, PARENT, 0, 0, 0);
+    return CreateWindowExW(0, L"button", text, WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, x, y, width, height, PARENT, 0, 0, 0);
 }
 
 BOOLEAN isCreated(HWND me)
 {
-	return me != 0;
+    return me != 0;
 }
 
 void button_setWidth(HWND me, int WIDTH)
