@@ -21,6 +21,26 @@ button_setY     (button2,  50);                                       //set X as
 button_setText  (button2, L"this is button2");                        //set text of button named b1 as "and this is button2"
 ```
 
+**Output:**
+```
+ ____________________________________
+|______________________________|_|_|_|
+|   ____________________             |
+|  |                    |            |
+|  | this is button1    |            |
+|  |____________________|            |
+|  			             |
+|   _____________________            |
+|  |                     |           |
+|  | and this is button2 |           |
+|  |_____________________|           |
+|		                     |
+|		                     |
+|		                     |
+|		                     |
+|____________________________________|
+```
+
 ## Features
 - Uses C99 for best compatibility
 - Separate headers for each widget, include only those which you require
