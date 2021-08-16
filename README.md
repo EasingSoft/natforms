@@ -5,20 +5,14 @@ Small C header only wrapper over windows native graphical widgets without spoili
 Most ui libraries are written in C++. There were few C libs, even those of mostly very low level or with dirty syntax. Natforms itself uses low level apis, but wrapping it an easy way. Calling natform is same as calling native apis directly. So there is less gap. Whereas, most managed ui libraries create an huge gape between operating system api, thus causing performance issues.  
 ## How syntax look like ?
 ```c
-HWND button1 = 0;                                                     //declare variable named b1 with type HWND. Remember: 0 or Null or nullptr, all are same
-button_setHeight(button1,  30);                                       //set height of button named b1 as 30px
-button_setWidth (button1, 150);                                       //set width of button named b1 as 150px
-button_setX     (button1,  10);                                       //set X asix of button named b1 as 10px
-button_setY     (button1,  10);                                       //set X asix of button named b1 as 10px
-button_setText  (button1, L"This is button1");                        //set text of button named b1 as "This is button1"
-button1 = button_create(parent);                                      //show button named b1 and insert its window to b2 variable
-                      
-HWND button2 = button_create(parent);                                 //show button named b1 and insert its window to b2 variable
-button_setHeight(button2,  30);                                       //set height of button named b1 as 30px
-button_setWidth (button2, 150);                                       //set width of button named b1 as 150px
-button_setX     (button2,  10);                                       //set X asix of button named b1 as 10px
-button_setY     (button2,  50);                                       //set X asix of button named b1 as 50px
-button_setText  (button2, L"this is button2");                        //set text of button named b1 as "and this is button2"
+	button button1 = Button();
+	button_setParent (&button1, parent);
+	button_setX      (&button1, 10);
+	button_setY      (&button1, 10);
+	button_setWidth  (&button1, 200);
+	button_setHeight (&button1, 30);
+	button_setText   (&button1, L"Button1");
+	button_draw      (&button1);
 ```
 
 **Output:**
