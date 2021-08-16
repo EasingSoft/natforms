@@ -4,15 +4,15 @@ Small C header only wrapper over windows native graphical widgets without spoili
 ## Why need of new UI lib, if there are already many present ?
 Most ui libraries are written in C++. There were few C libs, even those of mostly very low level or with dirty syntax. Natforms itself uses low level apis, but wrapping it an easy way. Calling natform is same as calling native apis directly. So there is less gap. Whereas, most managed ui libraries create an huge gape between operating system api, thus causing performance issues.  
 ## How syntax look like ?
-```c
-	button button1 = Button();
-	button_setParent (&button1, parent);
-	button_setX      (&button1, 10);
-	button_setY      (&button1, 10);
-	button_setWidth  (&button1, 200);
-	button_setHeight (&button1, 30);
-	button_setText   (&button1, L"Button1");
-	button_draw      (&button1);
+```csharp
+button button1 = Button();
+button_setParent (&button1, parent);
+button_setX      (&button1, 10);
+button_setY      (&button1, 10);
+button_setWidth  (&button1, 200);
+button_setHeight (&button1, 30);
+button_setText   (&button1, L"Button1");
+button_draw      (&button1);
 ```
 
 **Output:**
