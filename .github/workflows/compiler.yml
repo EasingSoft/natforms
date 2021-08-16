@@ -14,8 +14,14 @@ jobs:
     - name: Build
       run: cmd /c build.bat
 
-    - name: Upload
+    - name: Upload x86
       uses: actions/upload-artifact@v2
       with:
-          name: Releases
-          path: bin
+          name: examples_x86
+          path: bin/x86
+          
+    - name: Upload x64
+      uses: actions/upload-artifact@v2
+      with:
+          name: examples_x64
+          path: bin/x64
