@@ -1,26 +1,29 @@
 #include <windows.h>
-#include "../include/ui/button.h"
-#define Name "Button Example"
+#include "../include/ui/label.h"
+#define Name "Label Example"
 
-void DrawButton(HWND parent)
+void DrawLabel(HWND parent)
 {
-	button button1 = Button();
-	button_setParent(&button1, parent);
-	button_draw(&button1);
-	button_setX(&button1, 10);
-	button_setY(&button1, 10);
-	button_setWidth(&button1, 200);
-	button_setHeight(&button1, 30);
-	button_setText(&button1, L"Button1");
+	label label1 = Label();
+	label_setParent(&label1, parent);
+	label_draw(&label1);
+	label_setX(&label1, 10);
+	label_setY(&label1, 10);
 
-	button button2 = Button();
-	button_setParent(&button2, parent);
-	button_draw(&button2);
-	button_setY(&button2, 50);
-	button_setX(&button2, 10);
-	button_setWidth(&button2, 200);
-	button_setHeight(&button2, 30);
-	button_setText(&button2, L"Button2");
+	label_setWidth(&label1, 200);
+	label_setHeight(&label1, 30);
+	label_setText(&label1, L"Label1");
+
+
+
+	label label2 = Label();
+	label_setParent(&label2, parent);
+	label_draw(&label2);
+	label_setY(&label2, 50);
+	label_setX(&label2, 10);
+	label_setWidth(&label2, 200);
+	label_setHeight(&label2, 30);
+	label_setText(&label2, L"Label2");
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -28,7 +31,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 	switch (message) 
 	{
 	    case WM_CREATE:
-	    	DrawButton(hwnd);
+	    	DrawLabel(hwnd);
 	    	break;
 	    case WM_DESTROY:
 	    	PostQuitMessage(0);
