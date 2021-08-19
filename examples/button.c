@@ -3,25 +3,33 @@
 #include "../include/events.h"
 #define Name "Button Example"
 
+void On_button1_click()
+{
+    MessageBoxW(0, L"button1 clicked", L"event raised", MB_OK);
+}
+
 void DrawButton(HWND parent)
 {
-	button button1 = Button();
-	button_setParent(&button1, parent);
-	button_draw(&button1);
-	button_setX(&button1, 10);
-	button_setY(&button1, 10);
-	button_setWidth(&button1, 200);
-	button_setHeight(&button1, 30);
-	button_setText(&button1, L"Button1");
+    button button1 = Button();
+    button_setParent(&button1, parent);
+    button_draw(&button1);
+    button_setX(&button1, 10);
+    button_setY(&button1, 10);
+    button_setWidth(&button1, 200);
+    button_setHeight(&button1, 30);
+    button_setText(&button1, L"Button1");
+    add_handler(button1.ID, BUTTON_CLICK, On_button1_click);
 
-	button button2 = Button();
-	button_setParent(&button2, parent);
-	button_draw(&button2);
-	button_setY(&button2, 50);
-	button_setX(&button2, 10);
-	button_setWidth(&button2, 200);
-	button_setHeight(&button2, 30);
-	button_setText(&button2, L"Button2");
+    button button2 = Button();
+    button_setParent(&button2, parent);
+    button_draw(&button2);
+    button_setY(&button2, 50);
+    button_setX(&button2, 10);
+    button_setWidth(&button2, 200);
+    button_setHeight(&button2, 30);
+    button_setText(&button2, L"Button2");
+	
+	
 }
 
 
