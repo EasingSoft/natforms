@@ -12,10 +12,10 @@ cd..
 
 REM 32 bit Build
 for %%f in (examples\*.c) do (
-  %tcc% -Iinclude -o "bin/x86/%%~nf.exe" "%%f"
+  %tcc% -Werror -Iinclude -o "bin/x86/%%~nf.exe" "%%f"
 )
 
 REM 64 bit Build
 for %%f in (examples\*.c) do (
-  %tcc64% -Iinclude -o "bin/x64/%%~nf64.exe" "%%f"
+  %tcc64% -Werror -Iinclude -o "bin/x64/%%~nf64.exe" "%%f"
 )
