@@ -1,5 +1,6 @@
 #include <windows.h>
 #include "../include/ui/button.h"
+#include "../include/events.h"
 #define Name "Button Example"
 
 void DrawButton(HWND parent)
@@ -23,22 +24,6 @@ void DrawButton(HWND parent)
 	button_setText(&button2, L"Button2");
 }
 
-LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
-	switch (message) 
-	{
-	    case WM_CREATE:
-	    	DrawButton(hwnd);
-	    	break;
-	    case WM_DESTROY:
-	    	PostQuitMessage(0);
-	    	break;
-	    default:
-	    	return DefWindowProc(hwnd, message, wParam, lParam);
-	}
-	return 0;
-}
-
 
 int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 {
@@ -48,7 +33,7 @@ int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine
 	ZeroMemory(&wc, sizeof wc);
 	wc.hInstance = hInstance;
 	wc.lpszClassName = Name;
-	wc.lpfnWndProc = (WNDPROC)WndProc;
+	wc.lpfnWndProc = (WNDPROC)handle_all_events;
 	wc.style = CS_DBLCLKS | CS_VREDRAW | CS_HREDRAW;
 	wc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
@@ -60,7 +45,7 @@ int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine
 		240, 
 		0,0,hInstance,0);
 		
-	if (!hwnd) return 0;
+	DrawButton(hwnd);
 	while (GetMessage(&msg, NULL, 0, 0) > 0) 
 	{
 		TranslateMessage(&msg);
