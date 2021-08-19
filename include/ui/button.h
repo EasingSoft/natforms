@@ -10,70 +10,70 @@ typedef struct
 
 button Button()
 {
-	button lbl;
-	lbl.text = L"";
-	lbl.x = 0;
-	lbl.y = 0;
-	lbl.width = 10;
-	lbl.height = 10;
-	lbl.visible = 1;
-	return lbl;
+	button btn;
+	btn.text = L"";
+	btn.x = 0;
+	btn.y = 0;
+	btn.width = 10;
+	btn.height = 10;
+	btn.visible = 1;
+	return btn;
 }
 
 //Events
 #define BUTTON_CLICK WM_COMMAND
 //Events
 
-BOOL button_setVisible(button *l, BOOL VISIBLE)
+BOOL button_setVisible(button *b, BOOL VISIBLE)
 {
-	l->visible = VISIBLE;
-	return ShowWindow(l->me, (VISIBLE ? SW_SHOW : SW_HIDE));
+	b->visible = VISIBLE;
+	return ShowWindow(b->me, (VISIBLE ? SW_SHOW : SW_HIDE));
 }
 
-BOOL button_draw(button *l)
+BOOL button_draw(button *b)
 {
-	l->me = CreateWindowExW(0, L"button", l->text, (l->visible ? WS_VISIBLE | WS_CHILD : WS_CHILD), l->x, l->y, l->width, l->height, l->parent, (HMENU)l->ID, NULL, NULL);
-	return l->me != NULL;
+	b->me = CreateWindowExW(0, L"button", b->text, (b->visible ? WS_VISIBLE | WS_CHILD : WS_CHILD), b->x, b->y, b->width, b->height, b->parent, (HMENU)b->ID, NULL, NULL);
+	return b->me != NULL;
 }
 
-BOOL button_setID(button *l, int ID)
+BOOL button_setID(button *b, int ID)
 {
-	l->ID = ID;
-	return SetMenu(l->me, (HMENU)ID);
+	b->ID = ID;
+	return SetMenu(b->me, (HMENU)ID);
 }
 
-BOOL button_setParent(button *l, HWND PARENT)
+BOOL button_setParent(button *b, HWND PARENT)
 {
-	l->parent = PARENT;
-	return SetParent(l->me, PARENT) != NULL;
+	b->parent = PARENT;
+	return SetParent(b->me, PARENT) != NULL;
 }
 
-BOOL button_setWidth(button *l, int WIDTH)
+BOOL button_setWidth(button *b, int WIDTH)
 {
-	l->width = WIDTH;
-	return SetWindowPos(l->me, 0, 0, 0, WIDTH, l->height, SWP_NOMOVE | (l->visible ? SWP_SHOWWINDOW : SWP_HIDEWINDOW));
+	b->width = WIDTH;
+	return SetWindowPos(b->me, 0, 0, 0, WIDTH, b->height, SWP_NOMOVE | (b->visible ? SWP_SHOWWINDOW : SWP_HIDEWINDOW));
 }
 
-BOOL button_setHeight(button *l, int HEIGHT)
+BOOL button_setHeight(button *b, int HEIGHT)
 {
-	l->height = HEIGHT;
-	return SetWindowPos(l->me, 0, 0, 0, l->width, HEIGHT, SWP_NOMOVE | (l->visible ? SWP_SHOWWINDOW : SWP_HIDEWINDOW));
+	b->height = HEIGHT;
+	return SetWindowPos(b->me, 0, 0, 0, b->width, HEIGHT, SWP_NOMOVE | (b->visible ? SWP_SHOWWINDOW : SWP_HIDEWINDOW));
 }
 
-BOOL button_setX(button *l, int X)
+BOOL button_setX(button *b, int X)
 {
-	l->x = X;
-	return SetWindowPos(l->me, 0, X, l->y, 0, 0, SWP_NOSIZE | (l->visible ? SWP_SHOWWINDOW : SWP_HIDEWINDOW));
+	b->x = X;
+	return SetWindowPos(b->me, 0, X, b->y, 0, 0, SWP_NOSIZE | (b->visible ? SWP_SHOWWINDOW : SWP_HIDEWINDOW));
 }
 
-BOOL button_setY(button *l, int Y)
+BOOL button_setY(button *b, int Y)
 {
-	l->y = Y;
-	return SetWindowPos(l->me, 0, l->x, Y, 0, 0, SWP_NOSIZE | (l->visible ? SWP_SHOWWINDOW : SWP_HIDEWINDOW));
+	b->y = Y;
+	return SetWindowPos(b->me, 0, b->x, Y, 0, 0, SWP_NOSIZE | (b->visible ? SWP_SHOWWINDOW : SWP_HIDEWINDOW));
 }
 
-BOOL button_setText(button *l, LPCWSTR TEXT)
+BOOL button_setText(button *b, LPCWSTR TEXT)
 {
-	l->text = TEXT;
-	return SetWindowTextW(l->me, TEXT);
+	b->text = TEXT;
+	return SetWindowTextW(b->me, TEXT);
 }
