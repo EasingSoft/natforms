@@ -11,6 +11,7 @@ void On_button1_click()
 void DrawButton(HWND parent)
 {
     button button1 = Button();
+    button_setID(&button1, 3232);
     button_setParent(&button1, parent);
     button_draw(&button1);
     button_setX(&button1, 10);
@@ -18,7 +19,7 @@ void DrawButton(HWND parent)
     button_setWidth(&button1, 200);
     button_setHeight(&button1, 30);
     button_setText(&button1, L"Button1");
-    add_handler(button1.ID, BUTTON_CLICK, On_button1_click);
+    add_handler(button1.ID, BUTTON_CLICK, &On_button1_click);
 
     button button2 = Button();
     button_setParent(&button2, parent);
