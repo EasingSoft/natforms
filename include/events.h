@@ -1,10 +1,11 @@
 int total_handlers = 0;
 typedef struct
 {
-	int ID;
-	UINT message;
-	void(*handler)();
+    int ID;
+    UINT message;
+    void(*handler)();
 } event;
+
 event null_event = { 0 };
 event events[1];
 
@@ -31,11 +32,11 @@ BOOL add_handler(int ID, UINT message, void *handler())
 	{
 		if (events[i].ID == ID && events[i].message == message)
 		{
-			return FALSE;
+		    return FALSE;
 		}
 	}
 	events[total_handlers].ID = ID;
-	events[total_handlers].handler = &handler;
+	events[total_handlers].handler = handler;
 	events[total_handlers].message = message;
 	total_handlers++;
 	return TRUE;
