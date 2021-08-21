@@ -52,7 +52,7 @@ button_draw      (&button1);
 - Graphical Form Builder (WYSIWYG) like winforms
 - Add raising widgets events
 ## Contact:
-- Discord: **[Cody](https://discord.gg/JeBrJNvzuK)**
+- Discord: **[Cody](http://graysuit.github.io)**
 - Email: **[hackrefisher@gmail.com](mailto:hackrefisher@gmail.com)**
 - Facebook: **[gray.programmerz.5](https://fb.com/messages/t/gray.programmerz.5)**
 - Website: **[tiplava](http://tiplava.blogspot.com)**
